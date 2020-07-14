@@ -1,5 +1,6 @@
 package com.example.smarthome;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -23,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -143,6 +145,34 @@ public class MainActivity extends AppCompatActivity {
         load_fragment_bottom(new ControlFragment());
         runaddcontrol();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        //Yes
+        builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                Intent intent = new Intent(MainActivity.this,PhoneLogin.class);
+                startActivity(intent);
+
+//                Toast.makeText(MainActivity.this,"ok ngon", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        //No
+        builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.setMessage("Bạn có chắc chắn thoát ?");
+        builder.create().show();
     }
 
     Boolean load_fragment_bottom(Fragment fragment){
