@@ -24,12 +24,9 @@ public class ProfileFragment extends Fragment {
     String name,address,sdt,email;
     ArrayList<User> list = new ArrayList<>();
 
-
-
     public ProfileFragment() {
 
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,14 +51,11 @@ public class ProfileFragment extends Fragment {
                 name=dataSnapshot.child(user_phoneNo).child("name").getValue().toString();
                 sdt=dataSnapshot.child(user_phoneNo).child("phoneNo").getValue().toString();
 
-
-
                 tv_address.setText(address);
                 tv_email.setText(email);
                 tv_name.setText(name);
                 tv_phoneno.setText(sdt);
                 tv_username.setText(name);
-
 
             }
 

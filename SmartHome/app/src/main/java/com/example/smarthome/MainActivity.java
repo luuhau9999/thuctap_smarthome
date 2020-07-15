@@ -38,13 +38,13 @@ import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private TextView mTextMessage;
     FrameLayout frameLayout;
     LinearLayout layout_tab;
     TabLayout tabLayout;
     TabLayout tab;
     ViewPager viewPager;
     RelativeLayout relativeLayout;
+    Button scanBtn;
 
     private DatabaseReference reference;
     private String user_PhoneNo,user_name,user_address,user_email;
@@ -88,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
                     bundle.putString("key", user_PhoneNo);
 
                     selectedFragment.setArguments(bundle);
+
                     //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.layout_frame,selectedFragment).commit();
                     //return true;
                     break;
 
@@ -100,26 +100,32 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_main);
-    
-        //mTextMessage = findViewById(R.id.message);
+
         BottomNavigationView navigation = findViewById(R.id.nav_view);
         navigation.setItemIconTintList(null);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         layout_tab = findViewById(R.id.layout_tab);
         frameLayout = findViewById(R.id.layout_frame);
 
+        scanBtn = findViewById(R.id.scanBtn);
+
         tab = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.viewpaper);
 
+        scanBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ScannerActivity.class));
+            }
+        });
+
         CallControlFragment();
+
+
     }
 
     public void runaddcontrol(){
@@ -143,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void CallControlFragment() {
-        //frameLayout.setVisibility(View.VISIBLE);
         viewPager.setVisibility(View.VISIBLE);
         layout_tab.setVisibility(View.VISIBLE);
         tab.setVisibility(View.VISIBLE);
@@ -156,27 +161,26 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         //Yes
-        builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
                 Intent intent = new Intent(MainActivity.this,PhoneLogin.class);
                 startActivity(intent);
 
-//                Toast.makeText(MainActivity.this,"ok ngon", Toast.LENGTH_LONG).show();
 
             }
         });
 
         //No
-        builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
             }
         });
 
-        builder.setMessage("Bạn có chắc chắn thoát ?");
+        builder.setMessage("Are you sure to log out ?");
         builder.create().show();
     }
 
