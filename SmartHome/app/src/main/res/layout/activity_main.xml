@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -15,46 +16,53 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <RelativeLayout
-        android:id="@+id/relative_layout"
-        android:visibility="visible"
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="0dp"
-                android:gravity="center"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:text="Lilotech"
-                android:textColor="@color/colorFacebook"
-                android:fontFamily="@font/robotomedium"/>
-
-            <TextView
-                android:layout_width="140dp"
-                android:layout_height="match_parent"/>
-
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/qrcode" />
-
-        </LinearLayout>
-    </RelativeLayout>
 
     <LinearLayout
+
         android:id="@+id/layout_tab"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/relative_layout"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorDarkBlue"
+                >
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:text="Lilotech"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/robotomedium"/>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"/>
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/qrcode" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
@@ -64,7 +72,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorDarkBlue"
+            app:tabTextColor="@color/colorWhite"
+            >
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tab1"
@@ -83,8 +94,11 @@
         </com.google.android.material.tabs.TabLayout>
 
         <LinearLayout
+            android:id="@+id/middleArea"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorGrey"
+            >
 
 
 

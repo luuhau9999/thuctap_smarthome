@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 public class ProfileFragment extends Fragment {
     TextView tv_phoneno,tv_email,tv_address,tv_name,tv_username;
     String name,address,sdt,email;
+    Button editbtn;
     ArrayList<User> list = new ArrayList<>();
 
 
@@ -40,6 +42,7 @@ public class ProfileFragment extends Fragment {
         tv_address = (TextView) view.findViewById(R.id.tv_address);
         tv_name = (TextView) view.findViewById(R.id.tv_name);
         tv_username = (TextView) view.findViewById(R.id.tv_username);
+        editbtn = view.findViewById(R.id.editbtn);
         Bundle bundle = getArguments();
 
         final String user_phoneNo =  bundle.getString("key");

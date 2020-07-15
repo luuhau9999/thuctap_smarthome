@@ -15,5 +15,7 @@
     <color name="colorRed">#F03327</color>
     <color name="colorGrey">#C7C7C7</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorLightGrey">#F2F2F4</color>
+    <color name="bg_profile">#2E2D34</color>
 
 </resources>

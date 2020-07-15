@@ -16,6 +16,7 @@ import com.example.smarthome.ui.camera.CameraFragment;
 import com.example.smarthome.ui.chatbot.ChatBotFragment;
 import com.example.smarthome.ui.control.ControlFragment;
 import com.example.smarthome.ui.profile.ProfileFragment;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -25,8 +26,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -44,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     TabLayout tab;
     ViewPager viewPager;
+    View middle;
     RelativeLayout relativeLayout;
+
 
     private DatabaseReference reference;
     private String user_PhoneNo,user_name,user_address,user_email;
@@ -115,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         layout_tab = findViewById(R.id.layout_tab);
         frameLayout = findViewById(R.id.layout_frame);
-
+        middle = findViewById(R.id.middleArea);
         tab = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.viewpaper);
 
@@ -162,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this,PhoneLogin.class);
                 startActivity(intent);
+                finish();
 
 //                Toast.makeText(MainActivity.this,"ok ngon", Toast.LENGTH_LONG).show();
 
