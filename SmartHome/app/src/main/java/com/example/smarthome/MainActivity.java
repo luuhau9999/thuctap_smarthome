@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.smarthome.ui.camera.CameraFragment;
@@ -26,6 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     TabLayout tab;
     ViewPager viewPager;
+    RelativeLayout relativeLayout;
 
     private DatabaseReference reference;
     private String user_PhoneNo,user_name,user_address,user_email;
@@ -60,18 +63,19 @@ public class MainActivity extends AppCompatActivity {
                     tab.setVisibility(View.VISIBLE);
                     runaddcontrol();
                     return true;
+
                 case R.id.camera:
                     layout_tab.setVisibility(View.GONE);
                     frameLayout.setVisibility(View.VISIBLE);
                     load_fragment_bottom(new CameraFragment());
-
                     return true;
+
                 case R.id.chatbot:
                     layout_tab.setVisibility(View.GONE);
                     frameLayout.setVisibility(View.VISIBLE);
                     load_fragment_bottom(new ChatBotFragment());
-
                     return true;
+
                 case R.id.profile:
                     //layout_tab.setVisibility(View.GONE);
                     //frameLayout.setVisibility(View.VISIBLE);
