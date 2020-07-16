@@ -34,6 +34,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //library
+    //please dont update library, it will be error
 
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
@@ -41,7 +42,21 @@ dependencies {
     implementation 'com.amitshekhar.android:android-networking:1.0.2'
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
     implementation 'com.google.firebase:firebase-database:19.3.0'
+
+
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
+
+
+            //qrCode
+    implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
+    implementation 'com.budiyev.android:code-scanner:2.1.0'
+    implementation 'com.karumi:dexter:6.0.0'
+    implementation 'com.google.android.gms:play-services-vision:20.1.0'
+    implementation 'info.androidhive:barcode-reader:1.1.2'
+
+4377334cedd0c54c1b356e6278f9bc39ba207ff0
 
 }
 apply plugin: 'com.google.gms.google-services'

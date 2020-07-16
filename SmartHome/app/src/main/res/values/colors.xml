@@ -15,7 +15,13 @@
     <color name="colorRed">#F03327</color>
     <color name="colorGrey">#C7C7C7</color>
     <color name="colorBlack">#000000</color>
+<<<<<<< HEAD
     <color name="colorLightGrey">#F2F2F4</color>
     <color name="bg_profile">#2E2D34</color>
+=======
+    <color name="colorTransparent">#00000000</color>
+    <color name="toolbarTransparent">#00FFFFFF</color>
+    <color name="actionbar_opacity">#33000000</color>
+>>>>>>> 4377334cedd0c54c1b356e6278f9bc39ba207ff0
 
 </resources>

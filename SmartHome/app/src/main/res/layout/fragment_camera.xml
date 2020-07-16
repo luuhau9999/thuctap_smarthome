@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> 4377334cedd0c54c1b356e6278f9bc39ba207ff0
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +12,11 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+<<<<<<< HEAD
 
 
 
 </RelativeLayout>
+=======
+</LinearLayout>
+>>>>>>> 4377334cedd0c54c1b356e6278f9bc39ba207ff0

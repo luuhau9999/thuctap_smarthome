@@ -16,9 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 4377334cedd0c54c1b356e6278f9bc39ba207ff0
     <LinearLayout
 
         android:id="@+id/layout_tab"
@@ -27,7 +30,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+<<<<<<< HEAD
         <androidx.cardview.widget.CardView
+=======
+        <RelativeLayout
+>>>>>>> 4377334cedd0c54c1b356e6278f9bc39ba207ff0
             android:id="@+id/relative_layout"
             android:visibility="visible"
             android:layout_width="match_parent"
@@ -35,9 +42,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="match_parent"
                 android:background="@color/colorDarkBlue"
                 >
+=======
+                android:layout_height="match_parent">
+>>>>>>> 4377334cedd0c54c1b356e6278f9bc39ba207ff0
 
                 <TextView
                     android:layout_width="150dp"
@@ -47,7 +58,11 @@
                     android:textSize="30dp"
                     android:textStyle="bold"
                     android:text="Lilotech"
+<<<<<<< HEAD
                     android:textColor="@color/colorWhite"
+=======
+                    android:textColor="@color/colorFacebook"
+>>>>>>> 4377334cedd0c54c1b356e6278f9bc39ba207ff0
                     android:fontFamily="@font/robotomedium"/>
 
                 <TextView
@@ -55,6 +70,7 @@
                     android:layout_height="match_parent"/>
 
                 <Button
+<<<<<<< HEAD
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
@@ -63,6 +79,16 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+=======
+                    android:id="@+id/scanBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/qrcode" />
+
+            </LinearLayout>
+        </RelativeLayout>
+>>>>>>> 4377334cedd0c54c1b356e6278f9bc39ba207ff0
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
@@ -99,8 +125,6 @@
             android:layout_height="match_parent"
             android:background="@color/colorGrey"
             >
-
-
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpaper"
